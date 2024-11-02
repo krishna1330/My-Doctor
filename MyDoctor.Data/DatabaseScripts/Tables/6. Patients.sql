@@ -3,8 +3,9 @@ CREATE TABLE Patients (
     UserId INT REFERENCES Users(UserId),
     PatientName VARCHAR NOT NULL,
     PatientDOB TIMESTAMP NOT NULL,
-    Status INT REFERENCES Statuses(StatusId),
+    StatusId INT REFERENCES Statuses(StatusId),
     CreatedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	CreatedBy INT,
     ModifiedDate TIMESTAMP,
     ModifiedBy INT
 );

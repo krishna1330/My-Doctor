@@ -1,13 +1,13 @@
 CREATE TABLE Users (
     UserId SERIAL PRIMARY KEY,
-    UserType INT REFERENCES UserTypes(UserTypeId),
+    UserTypeId INT REFERENCES UserTypes(UserTypeId),
     FirstName VARCHAR(40),
     LastName VARCHAR(15),
     EmailId VARCHAR,
     Phone VARCHAR(15),
     Password VARCHAR,
-    Status INT REFERENCES Statuses(StatusId),
     LastLogin TIMESTAMP,
+	StatusId INT REFERENCES Statuses(StatusId),
     CreatedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CreatedBy INT,
     ModifiedDate TIMESTAMP,
@@ -15,13 +15,13 @@ CREATE TABLE Users (
 );
 
 INSERT INTO Users (
-    UserType,
+    UserTypeId,
     FirstName,
     LastName,
     EmailId,
     Phone,
     Password,
-    Status,
+    StatusId,
     LastLogin,
     CreatedDate,
     CreatedBy,

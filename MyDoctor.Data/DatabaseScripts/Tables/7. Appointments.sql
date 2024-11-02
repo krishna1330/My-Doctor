@@ -5,7 +5,7 @@ CREATE TABLE Appointments (
     Token INT,
     Diagnosis VARCHAR,
     Medicine VARCHAR,
-    Status INT REFERENCES Statuses(StatusId),
+    StatusId INT REFERENCES Statuses(StatusId),
     CreatedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CreatedBy INT,
     ModifiedDate TIMESTAMP,
