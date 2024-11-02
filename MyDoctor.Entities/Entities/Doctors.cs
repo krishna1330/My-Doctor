@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace MyDoctor.Entities.Entities
     [Table("doctors")]
     public class Doctors
     {
+        [Key]
         [Column("doctorid")]
         public int DoctorId { get; set; }
         [ForeignKey("users")]
@@ -20,6 +22,8 @@ namespace MyDoctor.Entities.Entities
         public int HospitalId { get; set; }
         [Column("education")]
         public string? Education { get; set; }
+        [Column("fee")]
+        public int Fee { get; set; }
         [Column("availablefrom")]
         public DateTime AvailableFrom { get; set; }
         [Column("availableto")]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace MyDoctor.Entities.Entities
     [Table("appointments")]
     public class Appointments
     {
+        [Key]
         [Column("appointmentid")]
         public int AppointmentId { get; set; }
         [ForeignKey("patients")]
@@ -27,7 +29,7 @@ namespace MyDoctor.Entities.Entities
         [ForeignKey("Statuses")]
         [Column("statusid")]
         public int StatusId { get; set; }
-        [Column("createdate")]
+        [Column("createddate")]
         public DateTime CreatedDate { get; set; }
         [Column("createdby")]
         public int CreatedBy { get; set; }

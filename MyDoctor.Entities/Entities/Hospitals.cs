@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace MyDoctor.Entities.Entities
     [Table("hospitals")]
     public class Hospitals
     {
+        [Key]
         [Column("hospitalid")]
         public int HospitalId { get; set; }
         [Column("hospitalname")]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace MyDoctor.Entities.Entities
     [Table("patients")]
     public class Patients
     {
+        [Key]
         [Column("patientid")]
         public int PatientId { get; set; }
         [ForeignKey("users")]
