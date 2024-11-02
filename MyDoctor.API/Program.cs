@@ -1,4 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using MyDoctor.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("PostgreSqlConnection");
+
+// Add DbContext
+builder.Services.AddDbContext<MyDoctorDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSqlConnection")));
 
 // Add services to the container.
 
